@@ -7,9 +7,11 @@ RUN curl -fsSL -o apache-maven.tar.gz https://apache.osuosl.org/maven/maven-3/3.
 RUN mkdir -p /home/compile
 COPY . /home/compile
 WORKDIR /home/compile
+# Compile Stage
 RUN mvn compile
-# Test stage
+# Test Stage
 RUN mvn test
-# Package stage
+# Package Stage
 RUN mvn package
+# Copy WAR file to /root
 RUN cp /home/compile/target/hello-world-war-1.0.0.war /root
