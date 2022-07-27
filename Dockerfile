@@ -15,3 +15,5 @@ RUN mvn test
 RUN mvn package
 # Copy WAR file to /root
 RUN cp /home/compile/target/hello-world-war-1.0.0.war /root
+RUN rm -rf /home
+WORKDIR /root
