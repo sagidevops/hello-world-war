@@ -1,5 +1,5 @@
 # Build stage
-FROM openjdk:11.0.15-jre
+FROM tomcat
 RUN curl -fsSL -o apache-maven.tar.gz https://apache.osuosl.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz \
 && tar -xzf apache-maven.tar.gz \
 && rm -rf apache-maven.tar.gz \
@@ -15,5 +15,4 @@ RUN mvn test
 RUN mvn package
 # Copy WAR file to /root
 RUN cp /home/compile/target/hello-world-war-1.0.0.war /root
-RUN rm -rf /home
 WORKDIR /root
