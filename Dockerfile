@@ -1,5 +1,5 @@
 # Build stage
-FROM tomcat
+FROM tomcat:latest
 RUN curl -fsSL -o apache-maven.tar.gz https://apache.osuosl.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz \
 && tar -xzf apache-maven.tar.gz \
 && rm -rf apache-maven.tar.gz \
