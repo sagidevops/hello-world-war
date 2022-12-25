@@ -15,4 +15,3 @@ RUN mvn test
 RUN mvn package
 # Copy WAR file to /root
 RUN cp /home/compile/target/hello-world-war-1.0.0.war /usr/local/tomcat/webapps/
-WORKDIR /root
